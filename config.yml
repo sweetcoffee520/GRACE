@@ -1,0 +1,16 @@
+PATH:
+  - GRACE_SH_FOLDER: 'grace_sh_folder'
+  - Institute: 'CSR'
+  - love_path: 'data/loadLove.txt'
+  - mask_path: 'data/mask01d_300km.nc'
+
+Replace:
+  - C00: False
+  - degree1: True
+  - C20C30: True
+
+Filter:
+  - destripe: 'chen'
+  - gaussian_filter_radius: 300
+
+Resolution: 1
