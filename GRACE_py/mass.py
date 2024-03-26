@@ -33,8 +33,8 @@ def mass(Lmax, file_num, DeltaC, DeltaS, lat, lon, love_path, rho_water):
     legendre = lgd.normalized_legendre(Lmax,90-lat)
 
     loveN = ((2*np.arange(Lmax+1)+1)/(1+loveN_k[0:Lmax+1]))
-    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
-    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
+    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
+    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
 
     Mass = np.zeros((len(lat), len(lon), file_num))
 

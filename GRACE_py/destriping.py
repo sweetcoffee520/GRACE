@@ -2,7 +2,7 @@
 Author: sweetcoffee qq791227132@gmail.com
 Date: 2023-07-03 13:34:52
 LastEditors: sweetcoffee qq791227132@gmail.com
-LastEditTime: 2023-07-18 17:08:51
+LastEditTime: 2024-03-26 22:33:04
 FilePath: /ocean_change_python/GRACE_py/destriping.py
 Description: destriping from SC
 
@@ -211,7 +211,7 @@ def swenson_destriping(SC, start_deg, end_deg, start_ord, end_ord, poly_ord, Lma
     """
     file_num = np.size(SC,2)
     SC_s = np.zeros((Lmax+1, 2*Lmax+1, file_num))
-# 球谐系数不变的部分
+    # 球谐系数不变的部分
     SC_s[end_ord:end_deg+1, :, :] = SC[end_ord:end_deg+1, :, :]
     for i in range(file_num):
         for m in range(start_ord-1, end_ord+1):
@@ -327,4 +327,4 @@ def swenson_destriping(SC, start_deg, end_deg, start_ord, end_ord, poly_ord, Lma
 
     SC_new = SC-SC_s
 
-    return SC_new,SC_s
+    return SC_new

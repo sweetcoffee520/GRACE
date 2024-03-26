@@ -26,8 +26,8 @@ def geoid(Lmax, file_num, DeltaC, DeltaS, lat, lon):
     a = 6371004  # 地球平均半径：单位米
     legendre = lgd.normalized_legendre(Lmax,90-lat)
 
-    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
-    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
+    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
+    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
 
     geo = np.zeros((len(lat), len(lon), file_num))
 

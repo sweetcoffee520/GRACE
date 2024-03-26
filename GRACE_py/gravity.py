@@ -26,8 +26,8 @@ def gravity(Lmax, file_num, DeltaC, DeltaS, lat, lon):
     GM = 3.986004418e14  # 地球质量
     legendre = lgd.normalized_legendre(Lmax,90-lat)
 
-    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
-    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
+    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
+    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
 
     G = np.zeros((len(lat), len(lon), file_num))
 

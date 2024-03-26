@@ -38,8 +38,8 @@ def vertical_deformation(Lmax, file_num, DeltaC, DeltaS, lat, lon ,love_path):
     legendre = lgd.normalized_legendre(Lmax,90-lat)
 
     loveN = ((loveN_h[0:Lmax+1])/(1+loveN_k[0:Lmax+1]))
-    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
-    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None])*lon[None,:])
+    cosmf = np.cos(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
+    sinmf = np.sin(np.deg2rad(np.arange(Lmax+1)[:,None]*lon[None,:]))
 
     vertical_d = np.zeros((len(lat), len(lon), file_num))
 
