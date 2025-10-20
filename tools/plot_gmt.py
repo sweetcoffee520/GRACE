@@ -1,8 +1,8 @@
 '''
 Author: sweetcoffee qq791227132@gmail.com
 Date: 2022-04-28 22:20:46
-LastEditors: sweetcoffee qq791227132@gmail.com
-LastEditTime: 2023-08-23 16:14:35
+LastEditors: zhe song songzhe21@mails.ucas.ac.cn
+LastEditTime: 2025-10-20 15:23:36
 FilePath: /ocean_change_python/tools/plot_gmt.py
 Github: https://github.com/sweetcoffee520
 Description: 
@@ -21,7 +21,7 @@ def plot_K(xyz, spacing, region, color_scale, colorbar_type, title, xtitle, ytit
                 with fig.set_panel([j, i]):
                     # coltypes='ig'表示此命令中输入数据的类型，fg表示地理坐标，projection后面加个d表示输入数据是地理坐标
                     fig.basemap(region=region, frame=[
-                                'xa60f60','ya60f60',f'+t"{title}"'], projection='Ks10c')
+                                'xa60f60','ya60f60',f'+t{title}'], projection='Ks10c')
                     # fig.coast(land="black", water="skyblue")
                     grd = pygmt.xyz2grd(
                         data=xyz[:, :, i*4+j], spacing=spacing, region=region, coltypes='ig')
@@ -50,7 +50,7 @@ def plot_X(xyz, spacing, region, color_scale, colorbar_type, colorbar_is_continu
                 with fig.set_panel([j, i]):
                     # coltypes='ig'表示此命令中输入数据的类型，fg表示地理坐标，projection后面加个d表示输入数据是地理坐标
                     fig.basemap(region=region, frame=[
-                                'xa60f60','ya60f60',f'+t"{title}"'], projection='X10c/5c')
+                                'xa60f60','ya60f60',f'+t{title}'], projection='X10c/5c')
                     # fig.coast(land="black", water="skyblue")
                     grd = pygmt.xyz2grd(
                         data=xyz[:, :, i*4+j], spacing=spacing, region=region, coltypes='ig')
@@ -79,7 +79,7 @@ def plot_X_amp(xyz, spacing, region, color_scale, color_interval,title, xtitle, 
                 with fig.set_panel([j, i]):
                     # coltypes='ig'表示此命令中输入数据的类型，fg表示地理坐标，projection后面加个d表示输入数据是地理坐标
                     fig.basemap(region=region, frame=[
-                                'xa60f60','ya60f60',f'+t"{title}"'], projection='X10c/5c')
+                                'xa60f60','ya60f60',f'+t{title}'], projection='X10c/5c')
                     # fig.coast(land="black", water="skyblue")
                     grd = pygmt.xyz2grd(
                         data=xyz[:, :, i*4+j], spacing=spacing, region=region, coltypes='ig')
@@ -108,7 +108,7 @@ def plot_X_pha(xyz, spacing, region, color_scale, color_interval, title, xtitle,
                 with fig.set_panel([j, i]):
                     # coltypes='ig'表示此命令中输入数据的类型，fg表示地理坐标，projection后面加个d表示输入数据是地理坐标
                     fig.basemap(region=region, frame=[
-                                'xa60f60','ya60f60',f'+t"{title}"'], projection='X10c/5c')
+                                'xa60f60','ya60f60',f'+t{title}'], projection='X10c/5c')
                     # fig.coast(land="black", water="skyblue")
                     grd = pygmt.xyz2grd(
                         data=xyz[:, :, i*4+j], spacing=spacing, region=region, coltypes='ig')
